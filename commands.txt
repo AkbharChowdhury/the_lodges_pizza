@@ -1,0 +1,24 @@
+run server
+php artisan serve
+
+php artisan make:controller PizzaController -m
+
+migration
+php artisan make:migration create_bases_table
+php artisan make:migration add_toppings_to_pizzas_table
+//            $table->json('toppings');
+
+run migration
+php artisan migrate
+
+models
+php artisan make:model Pizza
+php artisan make:model Base
+
+
+helpful links:
+https://manoj-shu100.medium.com/eloquent-orm-in-laravel-simplifying-database-interactions-b0269942f190
+npm install
+
+composer require laravel/ui
+php artisan ui vue --auth
