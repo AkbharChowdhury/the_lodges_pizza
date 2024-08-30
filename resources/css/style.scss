@@ -1,9 +1,8 @@
 :root {
     --blue: #1e90ff;
     --white: #ffffff;
-    --purple: #5e2195
-
-
+    --purple: #5e2195;
+    --green: green;
 }
 
 footer{
@@ -29,7 +28,7 @@ footer{
     text-transform: uppercase;
     border-bottom: 2px solid;
     padding: 12px 0;
-    color: var(--purple);
+    color: var(--green);
 }
 
 /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
