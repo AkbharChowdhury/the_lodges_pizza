@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <p><a href="{{ route('pizzas.index') }}" class="text-capitalize">View all pizza orders</a></p>
                 </div>
             </div>
         </div>
