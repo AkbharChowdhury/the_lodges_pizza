@@ -2,11 +2,21 @@
 @section('content')
    <div class="container-fluid">
        <h1 class="title">pizza list</h1>
+
+
+
+       </div>
        @forelse ($pizzas as $pizza)
-           <h2><a href="{{ route('pizzas.show', $pizza->id) }}">{{ $pizza->name }}</a> </h2>
-           <hr>
-           <h3>{{ $pizza->type }} ({{ $pizza->base }})</h3>
-           <br>
+
+
+           <div class="card mb-3" style="width: 18rem;">
+               <div class="card-body">
+                   <h2 class="text-capitalize">{{ $pizza->type }} ({{ $pizza->base }})</h2>
+                   <p class="card-text text-capitalize"> <strong>{{ $pizza->name }}</strong></p>
+                   <a href="{{ route('pizzas.show', $pizza->id) }}" class="btn btn-primary stretched-link">view</a>
+               </div>
+           </div>
+
        @empty
            <p>No pizzas</p>
        @endforelse
