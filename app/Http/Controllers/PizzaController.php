@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Base;
 use App\Models\Pizza;
-use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+
 
 class PizzaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['store', 'create']);
+    }
+
+
     public function index()
     {
 
@@ -27,7 +35,7 @@ class PizzaController extends Controller
 
     public function create()
     {
-        $pizzas =  Pizza::distinct()->orderBy('type')->get(['type']);
+        $pizzas = Pizza::distinct()->orderBy('type')->get(['type']);
         $bases = Base::orderBy('base')->get(['base']);
         return view('pizzas.create', compact('pizzas', 'bases'));
     }
@@ -41,7 +49,6 @@ class PizzaController extends Controller
             'base' => request('base'),
             'price' => request('price'),
             'toppings' => request('toppings'),
-
 
 
         ]);
